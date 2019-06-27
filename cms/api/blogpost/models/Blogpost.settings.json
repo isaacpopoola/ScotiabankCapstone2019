@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "blogposts",
+  "info": {
+    "name": "blogpost",
+    "description": "template for a blogpost"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Title/Headers": {
+      "type": "string"
+    },
+    "Paragraphs": {
+      "type": "text"
+    },
+    "MediaContent": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}
