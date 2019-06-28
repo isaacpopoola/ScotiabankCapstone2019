@@ -1,7 +1,7 @@
 import React from 'react';
 import logo_desktop from '../assets/logos/Scotiabank-Workmark-Logo_HEX_E.png';
 import logo_tablet from '../assets/logos/scotiabank-logo-red-tablet.png';
-import logo_mobile from '../assets/logos/scotiabank-logo-red-tablet.png';
+import logo_mobile from '../assets/logos/Scotiabank-FlyingS-Icon_HEX.png';
 import { Collapse,
     Navbar,
     NavbarToggler,
@@ -12,7 +12,8 @@ import { Collapse,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem} from 'reactstrap';
+    DropdownItem
+} from 'reactstrap';
 
 class MainNavbar extends React.Component {
     
@@ -38,17 +39,22 @@ class MainNavbar extends React.Component {
         const { navCollapsed } = this.state;
 
         return (
-            <div>
+            <div id='the_navbar'>
                 <Navbar color="light" light expand="lg">
+                    <Nav>
+
+                    </Nav>
                     <NavbarBrand href='/'>
-                        <img src={logo_desktop} width="20%" alt=""/>
+                        {/* <img id = 'desktop' src={logo_desktop} width='290px' height='80px' className = 'd-inline-block align-top' alt=""/> */}
+                        <img id = 'tablet' src={logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center' alt="" style={{margin: '1.5rem'}} />
+                        {/* <img id = 'mobile' src={logo_mobile} width='46.65px' height='51.7px' className = 'd-inline-block align-top' alt="" style={{margin: '0.5rem'}}/> */}
                     </NavbarBrand>
 
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar/*style={{flexBasis:'100%'}}*/>
                         <Nav className='ml-auto' navbar>
-                            <NavItem>
-                                <NavLink href='/'>Home</NavLink>
+                            <NavItem active>
+                                <NavLink href='/' >Home</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href='/'>About</NavLink>
