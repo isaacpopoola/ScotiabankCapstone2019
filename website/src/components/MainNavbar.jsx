@@ -33,26 +33,43 @@ class MainNavbar extends React.Component {
             isOpen: !this.state.isOpen
         });
     }
+
+    changeLogo() {
+        console.log(window.outerWidth);
+            if (window.outerWidth < 768){
+                
+                $('#logos').empty();
+                $('#logos').prepend(`<img id = 'mobile' src=${logo_mobile} width='46.65px' height='51.7px' className = 'd-inline-block align-top mobile' alt="" style={{margin: '0.5rem'}}/>`);
+
+            } else if (window.outerWidth <=1024){
+                $('#logos').empty();
+                $('#logos').prepend(`<img id = 'tablet' src=${logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center tablet' alt="" style={{margin: '1.5rem'}} />`);
+            } else if (window.outerWidth >1024){
+                $('#logos').empty();
+                $('#logos').prepend(`<img id = 'desktop' src=${logo_desktop} width='290px' height='80px' className = 'd-inline-block align-top desktop' alt=""/>`);
+            }
+    }
     
     render() {
         //console.log(this.props);
 
-        const changeLogo = () => {
+        /*const changeLogo = () => {
             console.log(window.outerWidth);
-            if (window.outerWidth <= 768){
-                $('#logos').replaceWith("<a href='/' id='logos' class='navbar-brand</a>'");
-                $('#logos').prepend("<img id = 'desktop' src=" + logo_desktop + " width='290px' height='80px' className = 'd-inline-block align-top desktop' alt='' />");
-
-            } else if (window.outerWidth < 1199){
-                $('#logos').replaceWith("<a href='/' id='logos' class='navbar-brand</a>'");
-                $('#logos').prepend(`<img id = 'tablet' src=${logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center tablet' alt="" style={{margin: '1.5rem'}} />`);
-            } else if (window.outerWidth >=1199){
-                $('#logos').replaceWith("<a href='/' id='logos' class='navbar-brand</a>'");
+            if (window.outerWidth < 768){
+                
+                $('#logos').empty();
                 $('#logos').prepend(`<img id = 'mobile' src=${logo_mobile} width='46.65px' height='51.7px' className = 'd-inline-block align-top mobile' alt="" style={{margin: '0.5rem'}}/>`);
-            }
-        }
 
-        window.onLoad = changeLogo;
+            } else if (window.outerWidth <=1024){
+                $('#logos').empty();
+                $('#logos').prepend(`<img id = 'tablet' src=${logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center tablet' alt="" style={{margin: '1.5rem'}} />`);
+            } else if (window.outerWidth >1024){
+                $('#logos').empty();
+                $('#logos').prepend(`<img id = 'desktop' src=${logo_desktop} width='290px' height='80px' className = 'd-inline-block align-top desktop' alt=""/>`);
+            }
+        }*/
+
+        window.onLoad = this.changeLogo;
         const { navCollapsed } = this.state;
        
 
@@ -76,7 +93,7 @@ class MainNavbar extends React.Component {
    
         //window.setInterval(changeLogo, 150);
         
-        window.onresize = changeLogo;
+        window.onresize = this.changeLogo;
 
 
 
