@@ -1,4 +1,11 @@
 .jumbotron {
-    background-image: url(./assets/images/img4.jpg) temp;
+    background-image: url(./assets/images/img1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+}
+
+#front {
+    height: 500px;
 }
