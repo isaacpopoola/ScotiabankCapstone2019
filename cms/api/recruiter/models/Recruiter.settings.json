@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "recruiters",
+  "info": {
+    "name": "recruiter",
+    "description": "Recruiter's information which includes:\n- Headshots\n- LinkedIn Links\n- Calendly API URL\n"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Headshot": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "LinkedInURL": {
+      "type": "text"
+    },
+    "CalendlyAPIURL": {
+      "type": "text"
+    }
+  }
+}

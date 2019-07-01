@@ -34,73 +34,53 @@ class MainNavbar extends React.Component {
         });
     }
 
-    changeLogo() {
-        console.log(window.outerWidth);
-            if (window.outerWidth < 768){
+    // changeLogo() {
+    //     console.log(window.outerWidth);
+    //         if (window.outerWidth < 768){
                 
-                $('#logos').empty();
-                $('#logos').prepend(`<img id = 'mobile' src=${logo_mobile} width='46.65px' height='51.7px' className = 'd-inline-block align-top mobile' alt="" style={{margin: '0.5rem'}}/>`);
+    //             $('#logos').empty();
+    //             $('#logos').prepend(`<img id = 'mobile' src=${logo_mobile} width='46.65px' height='51.7px' className = 'd-inline-block align-top mobile' alt="" style={{margin: '0.5rem'}}/>`);
 
-            } else if (window.outerWidth <=1024){
-                $('#logos').empty();
-                $('#logos').prepend(`<img id = 'tablet' src=${logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center tablet' alt="" style={{margin: '1.5rem'}} />`);
-            } else if (window.outerWidth >1024){
-                $('#logos').empty();
-                $('#logos').prepend(`<img id = 'desktop' src=${logo_desktop} width='290px' height='80px' className = 'd-inline-block align-top desktop' alt=""/>`);
-            }
-    }
+    //         } else if (window.outerWidth <=1024){
+    //             $('#logos').empty();
+    //             $('#logos').prepend(`<img id = 'tablet' src=${logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center tablet' alt="" style={{margin: '1.5rem'}} />`);
+    //         } else if (window.outerWidth >1024){
+    //             $('#logos').empty();
+    //             $('#logos').prepend(`<img id = 'desktop' src=${logo_desktop} width='290px' height='80px' className = 'd-inline-block align-top desktop' alt=""/>`);
+    //         }
+    // }
     
     render() {
         //console.log(this.props);
 
-        /*const changeLogo = () => {
+        const changeLogo = () => {
             console.log(window.outerWidth);
             if (window.outerWidth < 768){
                 
                 $('#logos').empty();
                 $('#logos').prepend(`<img id = 'mobile' src=${logo_mobile} width='46.65px' height='51.7px' className = 'd-inline-block align-top mobile' alt="" style={{margin: '0.5rem'}}/>`);
 
-            } else if (window.outerWidth <=1024){
+            } else if (window.outerWidth <992){
                 $('#logos').empty();
                 $('#logos').prepend(`<img id = 'tablet' src=${logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center tablet' alt="" style={{margin: '1.5rem'}} />`);
-            } else if (window.outerWidth >1024){
+            } else if (window.outerWidth >= 992){
                 $('#logos').empty();
                 $('#logos').prepend(`<img id = 'desktop' src=${logo_desktop} width='290px' height='80px' className = 'd-inline-block align-top desktop' alt=""/>`);
             }
-        }*/
+           
+        }
 
-        window.onLoad = this.changeLogo;
+        window.onresize = changeLogo;
+        window.onLoad = changeLogo;
         const { navCollapsed } = this.state;
-       
-
-        // let lastState = false;
-        // function checkForViewportChange () {
-        //     var state = window.matchMedia("(max-width: 768px)").matches;
-        //     if (state != lastState) {
-        //         if (state) {
-        //             //do your stuff here
-        //             console.log('tablet');
-
-        //         } else {
-        //             //do your other stuff here
-        //             console.log('desktop');
-        //         }
-        //         lastState = state
-        //     }
-        // }
-        // window.setInterval (checkForViewportChange, 150);
-
-   
-        //window.setInterval(changeLogo, 150);
         
-        window.onresize = this.changeLogo;
 
 
 
         return (
-            <div id='the_navbar'>
+            <div id='the_navbar' >
                 <Navbar color="light" light expand="lg">
-                    <NavbarBrand href='/'id='logos'>
+                    <NavbarBrand href='/'id='logos' onLoad={changeLogo()}>
                         {/* <img id = 'desktop' src={logo_desktop} width='290px' height='80px' className = 'd-inline-block align-top desktop' alt=""/> */}
                         {/* <img id = 'tablet' src={logo_tablet} width='128.5px' height='33px' className = 'd-inline-block align-center tablet' alt="" style={{margin: '1.5rem'}} /> */}
                         {/* <img id = 'mobile' src={logo_mobile} width='46.65px' height='51.7px' className = 'd-inline-block align-top mobile' alt="" style={{margin: '0.5rem'}}/> */}
