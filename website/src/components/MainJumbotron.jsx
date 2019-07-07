@@ -1,22 +1,22 @@
 import React from 'react';
-import img1 from '../assets/images/img4.jpg';
+import img1 from '../assets/images/img2.jpg';
+import {Image} from 'semantic-ui-react';
+// import {
+//     Jumbotron,
+// } from 'reactstrap';
 import {
-    Jumbotron,
-    Button,
-} from 'reactstrap';
+    Jumbotron
+} from 'react-bootstrap';
 
 class MainJumbotron extends React.Component{
 
+    
 
     render(){
-        // const images = [
-        //     {
-        //         src: 
-        //     }
-        // ];
+        function getWindowHeight() {return window.outerHeight*1}
         return(
             <div id='home'>
-                <Jumbotron id='front'>
+                <Jumbotron fluid id='front' style={{backgroundImage: `url(${img1})`, backgroundSize: 'cover', minHeight: getWindowHeight() + 'px'}}>
                     {/* <img src={img1} className='' alt=''></img> */}
                 </Jumbotron>
             </div>

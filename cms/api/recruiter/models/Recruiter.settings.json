@@ -7,7 +7,10 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
@@ -20,6 +23,15 @@
       "type": "text"
     },
     "CalendlyAPIURL": {
+      "type": "text"
+    },
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "JobTitle": {
       "type": "text"
     }
   }
