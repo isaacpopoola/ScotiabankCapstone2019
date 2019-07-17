@@ -29,15 +29,15 @@ class RecruiterCard extends React.Component {
     }
 
     render() {
-        console.log(this.props);
+        //console.log(this.props);
         return (
             <div id="recruiter" className='align-items-center'>
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={'http://192.168.56.101:1337' + this.props.Headshot.url} />
+                <Card style={{ width: '18rem', borderRadius:'15px'}}>
+                  <Card.Img variant="top" src={'http://192.168.56.101:1337' + this.props.Headshot.url} style={{borderTopLeftRadius:'inherit', borderTopRightRadius:'inherit'}}/>
                   <Card.Body>
-                  <div class="d-flex justify-content-start">
+                  <div className="d-flex justify-content-start">
                     <Card.Title style={{paddingRight:'0.5em'}}>{this.props.FirstName + ' ' + this.props.LastName}</Card.Title>
-                      <a href={this.props.LinkedInURL} >
+                      <a href={this.props.LinkedInURL} target='_blank'>
                           <FontAwesomeIcon style={{paddingBottom:'5px'}} className='ml-auto' size='2x' icon={faLinkedin}/>
                       </a>
                   </div>
@@ -49,6 +49,7 @@ class RecruiterCard extends React.Component {
                         show={this.state.modal}
                         onHide={this.toggle}
                         aria-labelledby="example-custom-modal-styling-title"
+                        animation
                     >
                         <Modal.Header closeButton>
                             <Modal.Title>

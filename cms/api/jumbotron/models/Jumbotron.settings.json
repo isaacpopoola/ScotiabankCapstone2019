@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "jumbotrons",
+  "info": {
+    "name": "jumbotron",
+    "description": "Pictures used for jumbo-tron"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

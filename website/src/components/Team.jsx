@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     CardColumns,
-    CardDeck
+    Container,
 } from 'react-bootstrap'
 import {RecruiterCard} from './componentIndex';
 import axios from 'axios';
@@ -45,10 +45,13 @@ export default class Team extends React.Component{
         
         return(
             <div id= 'recruiting-team' className='align-items-center' style={{margin:'2rem'}}>
-                <div className='h1' style={{marginLeft: '3rem'}}>Meet The Crew</div> 
-                <CardColumns className='d-flex justify-content-center flex-wrap' style={{margin:'3rem'}}>  
-                    {this.state.recruiters.map(profile => <RecruiterCard key={profile.id} {...profile} />)}
-                </CardColumns>
+                <Container style={{backgroundColor:'#ec111a'}}>
+                    <div className='h1' style={{marginLeft: '3rem', color: '#FFF'}}>Meet The Team</div> 
+                    <CardColumns className='d-flex justify-content-center flex-wrap' style={{margin:'3rem'}}>  
+                        {this.state.recruiters.map(profile => <RecruiterCard key={profile.id} {...profile} />)}
+                    </CardColumns>
+                </Container>
+                
             </div>
         );
     }

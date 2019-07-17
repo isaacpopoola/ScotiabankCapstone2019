@@ -1,3 +1,6 @@
+.modal-content {
+    border-radius:'15px'!important;
+}
 /* .jumbotron {
     background-image: url(./assets/images/img2.jpg);
     background-attachment: fixed;
