@@ -74,15 +74,16 @@ class MainNavbar extends React.Component {
 
         return (
             <div id='the_navbar' >
-                <Navbar collapseOnSelect expand='lg' bg='light' variant='light'>
-                    <Navbar.Brand id='logos' href='/' onLoad = {changeLogo()} />
+                <Navbar fixed='top' collapseOnSelect expand='lg' bg='light' variant='light'>
+                    <Navbar.Brand id='logos' href='/' onLoad = {changeLogo()}/>
                     <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                     <Navbar.Collapse id='responsive-navbar-nav'>
                         <Nav className='ml-auto' navbar>
                             <Nav.Link href='#'>Home</Nav.Link>
                             <Nav.Link href='#'>About</Nav.Link>
+                            <Nav.Link href='#'>Opportunities</Nav.Link>
                             <Nav.Link href='#'>Our Team</Nav.Link>
-                            <Nav.Link href='#'>Home</Nav.Link>
+                            <Nav.Link href='#'>Blogs</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
 

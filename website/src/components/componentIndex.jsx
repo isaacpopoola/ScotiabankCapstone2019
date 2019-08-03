@@ -3,7 +3,8 @@ import MainJumbotron from './MainJumbotron.jsx'
 import About from './About.jsx';
 import Team from './Team.jsx';
 import Recruiting from './Recruiting.jsx';
-import RecruiterCard from './RecruiterCard.jsx'
+import RecruiterCard from './RecruiterCard.jsx';
+import Blogs from './Blogs.jsx';
 
 
 export {
@@ -13,4 +14,5 @@ export {
     Team,
     Recruiting,
     RecruiterCard,
+    Blogs,
 }

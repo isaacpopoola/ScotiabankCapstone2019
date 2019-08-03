@@ -7,38 +7,55 @@ import {
   About,
   Recruiting,
   Team,
+  Blogs
 } from './components/componentIndex.jsx'
 import axios from 'axios';
 
 class App extends React.Component {
 
-  state = {
+  
+  constructor(props){
+    super(props);
+    
+    this.state = {
       rec_team: [],
       blogs: [],
+    }
+  }
+
+  componentDidMount() {
+    this.fetch_recruiters();
+    this.fetch_blogposts();
+
+    
   }
 
   fetch_recruiters = async (event) => {
   	//event.preventDefault();
   
-    const resp = await axios.get(`http://192.168.56.101:1337/recruiters`);
-    //console.log(resp.data);
+    axios.get("http://192.168.56.101:1337/recruiters").then((resp) => {
+      this.setState({rec_team: resp.data});
+    })
   }
   
 
  fetch_blogposts = async () => {
-    const response = await fetch('http://192.168.56.101:1337/blogpost');
-    const data = await response.json();
-    return data;
+    axios.get("http://192.168.56.101:1337/blogposts").then((resp) => {
+      this.setState({blogs: resp.data});
+    })
   }
 
   render() {
+    //console.log(this.state);
     return (
       <div className="App">
         <MainNavbar />
         <MainJumbotron />
         <About />
-        <Team />
-        <Recruiting />
+        <Team recruiters={this.state.rec_team}/>
+        <Recruiting/>
+        <Blogs blogs={this.state.blogs} />
+      
       </div>
     );
   }

@@ -12,7 +12,7 @@ class Recruiting extends React.Component{
     render() {
         return(
             <div id= 'recruiting'>
-                <Container style={{backgroundColor:'#ec111a', borderRadius:'15px'}}>
+                <Container style={{borderRadius:'5px'}}>
                     <VerticalTimeline>
                       <VerticalTimelineElement
                         className="vertical-timeline-element--work"

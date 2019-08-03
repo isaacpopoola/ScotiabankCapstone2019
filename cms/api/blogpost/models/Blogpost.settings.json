@@ -7,11 +7,14 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
-    "Title/Headers": {
+    "Title": {
       "type": "string"
     },
     "Paragraphs": {
@@ -21,6 +24,9 @@
       "collection": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "author": {
+      "type": "string"
     }
   }
 }

@@ -3,32 +3,15 @@ import img1 from '../assets/images/img2.jpg';
 import {
     Jumbotron,
     Image,
+    Carousel,
 } from 'react-bootstrap';
 import axios from 'axios';
-import { useTransition, animated, config } from 'react-spring';
+import $ from 'jquery';
 
 
-// const Images = () => {
-//     const [index, set] = useState(0)
-//     const transitions = useTransition(slides[index], item => item.id, {
-//       from: { opacity: 0 },
-//       enter: { opacity: 1 },
-//       leave: { opacity: 0 },
-//       config: config.molasses,
-//     })
-//     useEffect(() => void setInterval(() => set(state => (state + 1) % 4), 2000), [])
-//     return transitions.map(({ item, props, key }) => (
-//       <animated.div
-//         key={key}
-//         class="bg"
-//         style={{ ...props, backgroundImage: `url(https://images.unsplash.com/${item.url}&auto=format&fit=crop)` }}
-//       />
-//     ))
-//   }
+class MainJumbotron extends React.Component {
 
-class MainJumbotron extends React.Component{
 
-    
     constructor(props) {
         super(props);
         this.state = {
@@ -37,33 +20,57 @@ class MainJumbotron extends React.Component{
         };
     }
 
-    componentDidMount(){
+
+    componentWillMount() {
         this.fetch_photos()
     }
 
 
     fetch_photos() {
-        axios.get(`http://192.168.56.101:1337/jumbotrons`).then( (results) => {
+        axios.get(`http://192.168.56.101:1337/jumbotrons`).then((results) => {
 
             console.log('JUMBOTRON DATA');
             console.log(results.data[0]);
             this.setState({
-                pictures: results.data[0].photos,
-                title: results.data.Title
-            });    
-            
+                pictures: results.data[0].photos[0],
+                title: results.data[0].Title
+            });
+
         });
-        
+
     }
 
-    render(){
-
-        return(
+    render() {
+        console.log(this.state);
+        return (
             <div id='home'>
-                <Jumbotron fluid id='front' style={{marginLeft:'-10px', marginTop:'-10px', height:'100%', minWidth:'100%', padding:'0'}}>
-                    {/* <img src={img1} className='' alt=''></img> */}
-                    {/* <Image src={img1} style={{height:'100%', width:'100%', maxWidth:'100%'}} /> */}
-                  
+                <br/>
+                <br/>
+                <br/>
+                <Jumbotron fluid id='front'
+                    style={
+                        {
+                            backgroundImage: `url(${'http://192.168.56.101:1337' + this.state.pictures.url})`,
+                            //marginLeft: '-10px',
+                            //marginTop: '-10px',
+                            //marginBottom: '0px',
+                            //height: '100%',
+                            //minWidth: '100%',
+                            minHeight:'500px',
+                            backgroundSize: 'cover',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition:'top center'
+                        }
+                    }
+
+                    className = 'd-flex align-items-center justify-content-center'
+                >
+
+                    <h1 style={{color: '#FFF'}}>{this.state.title}</h1>
+                    {/* <Image src={img1} style={{ height: '100%', width: '100%', maxWidth: '100%' }} /> */}
+                    {/* <Image src={'http://192.168.56.101:1337' + this.state.pictures.url} style={{ height: '100%', width: '100%', maxWidth: '100%' }} /> */}
+                    {/* <Image src={'http://192.168.56.101:1337' + data.url} style={{height: '100%', width: '100%', objectFit: 'contain'}} /> */}
+
                 </Jumbotron>
             </div>
         )
