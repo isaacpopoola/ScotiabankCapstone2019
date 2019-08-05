@@ -4,6 +4,7 @@ import {
     Carousel,
     Card,
 } from 'react-bootstrap';
+import { Markdown } from 'react-showdown';
 
 export default class Blogs extends React.Component {
 
@@ -26,7 +27,7 @@ export default class Blogs extends React.Component {
 
 
     render() {
-
+        console.log("BLOGS");
         console.log(this.props);
 
         return (
@@ -36,7 +37,15 @@ export default class Blogs extends React.Component {
                         {this.props.blogs.map(blog =>
                             <Carousel.Item>
                                 <Card>
-                                    <Card.Body className="text-center">{blog.Title}</Card.Body>
+                                    <Card.Body 
+                                    //className="text-center"
+                                    >
+                                        <Card.Title>{blog.Title}</Card.Title>
+                                        <hr />
+                                        {/* <Card.Text> */}
+                                            <Markdown markup={blog.Paragraphs} />
+                                        {/* </Card.Text> */}
+                                    </Card.Body>
                                 </Card>
                             </Carousel.Item>
                         )}

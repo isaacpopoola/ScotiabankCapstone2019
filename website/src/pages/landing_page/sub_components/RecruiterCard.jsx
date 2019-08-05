@@ -6,7 +6,6 @@ import {
     Card,
     Button,
     Modal,
-    Embed,
 } from 'react-bootstrap';
 
 import $ from 'jquery';

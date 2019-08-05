@@ -3,7 +3,7 @@ import {
     CardColumns,
     Container,
 } from 'react-bootstrap'
-import { RecruiterCard } from './componentIndex';
+import { RecruiterCard } from './index.js';
 import axios from 'axios';
 
 export default class Team extends React.Component {
@@ -28,9 +28,9 @@ export default class Team extends React.Component {
         //  console.log(this.state);
 
         return (
-            <div id='recruiting-team' className='align-items-center' style={{ margin: '1rem' }}>
-                <Container >
-                    <div className='h1' style={{ marginLeft: '2rem' }}>Meet The Team</div>
+            <div id='recruiting-team' className='align-items-center' style={{marginLeft:'10rem', marginRight:'10rem'}}>
+                <Container fluid>
+                    <h2 style={{ marginLeft: '2rem' }}>Meet The Team</h2>
 
                     <h3 style={{ marginLeft: '2rem' }}>Director</h3>
                     <CardColumns className='d-flex justify-content-center flex-wrap' style={{ margin: '1rem' }}>
