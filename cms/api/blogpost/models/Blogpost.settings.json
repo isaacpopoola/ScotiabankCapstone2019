@@ -20,13 +20,11 @@
     "Paragraphs": {
       "type": "text"
     },
-    "MediaContent": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload"
-    },
     "author": {
       "type": "string"
+    },
+    "tags": {
+      "type": "json"
     }
   }
 }

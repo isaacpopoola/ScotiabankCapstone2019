@@ -7,7 +7,7 @@ import {
     Card
 
 } from 'react-bootstrap';
-import ProgramCard from './ProgramCard.jsx'
+import { ProgramCard } from './index.js'
 
 export default class Opportunities extends Component {
 
@@ -40,9 +40,7 @@ export default class Opportunities extends Component {
             items: temp
         });
 
-        console.log(this.state.items.values())
 
-        //console.log()
 
     }
 
@@ -50,10 +48,8 @@ export default class Opportunities extends Component {
         var temp = data.tags.tags;
         var ret = false;
         temp.forEach(tag => {
-            //console.log(tag)
             if (Array.from(this.state.items.values()).reduce((a, b) => a || b)) {
                 if (this.state.items.get(tag)) {
-                    console.log(tag);
                     ret = true
                 }
             } else {
@@ -77,10 +73,12 @@ export default class Opportunities extends Component {
         // }
 
         return (
-            <div id='opportunities' style={{marginLeft:'10rem', marginRight:'10rem'}}>
+            <div id='opportunities' style={{ marginLeft: '10rem', marginRight: '10rem' }}>
                 <Container fluid className='align-items-center'>
-                    <h3>Opportunities</h3>
-                    <Form>
+                    <hr/>
+                    <h2 className='text-center'>Opportunities</h2>
+                    <hr/>
+                    <Form className='d-flex justify-content-center flex-wrap'>
                         {['checkbox'].map(type => (
                             <Form.Group controlId="formBasicChecbox" key={`custom-inline-${type}`} className="mb-3" >
                                 <Form.Check
@@ -130,9 +128,9 @@ export default class Opportunities extends Component {
                         {this.props.programs.filter(this.myfilter).map(data =>
                             <ProgramCard  {...data} />
                         )}
-                        <a id='program' style={{ padding: '1rem' }} href='https://www.scotiabank.com/careers/en/careers/careers-students-and-new-grads.html' target='_blank'>
+                        <a id='program' style={{ padding: '1rem' }} href='https://www.scotiabank.com/careers/en/careers/careers-students-and-new-grads.html#internships' target='_blank'>
                             <Card
-                                
+
                                 style={{
                                     width: '20rem',
                                     borderRadius: '5px',
@@ -140,12 +138,11 @@ export default class Opportunities extends Component {
                                 }}
                             >
                                 <Card.Body>
-                                    <Card.Title style={{marginBottom:'0px'}}>See More</Card.Title>
+                                    <Card.Title style={{ marginBottom: '0px' }}>See More</Card.Title>
                                 </Card.Body>
                             </Card>
                         </a>
                     </CardColumns>
-
                 </Container>
             </div>
         )

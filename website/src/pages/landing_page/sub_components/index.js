@@ -6,6 +6,9 @@ import Recruiting from './Recruiting.jsx';
 import RecruiterCard from './RecruiterCard.jsx';
 import Blogs from './Blogs.jsx';
 import Opportunities from './Opportunities.jsx';
+import ProgramCard from './ProgramCard.jsx'
+import BlogCard from './BlogCard.jsx'
+import Footer from './Footer.jsx'
 
 
 export {
@@ -16,5 +19,8 @@ export {
     Recruiting,
     RecruiterCard,
     Blogs,
-    Opportunities
+    Opportunities,
+    ProgramCard,
+    BlogCard,
+    Footer
 }

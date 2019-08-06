@@ -49,7 +49,7 @@ class MainNavbar extends React.Component {
         //console.log(this.props);
 
         const changeLogo = () => {
-            console.log(window.outerWidth);
+            
             if (window.outerWidth < 768) {
 
                 $('#logos').empty();
@@ -83,7 +83,7 @@ class MainNavbar extends React.Component {
                                 <Nav.Link href='#home'>Home</Nav.Link>
                                 <Nav.Link href='#about'>About</Nav.Link>
                                 <Nav.Link href='#opportunities'>Opportunities</Nav.Link>
-                                <Nav.Link href='#recruiting-team'>Our Team</Nav.Link>
+                                <Nav.Link href='#recruiting-team'>Meet the Team</Nav.Link>
                                 <Nav.Link href='#blogs'>Blogs</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

@@ -26,8 +26,6 @@ class MainJumbotron extends React.Component {
     fetch_photos() {
         axios.get(`http://192.168.56.101:1337/jumbotrons`).then((results) => {
 
-            console.log('JUMBOTRON DATA');
-            console.log(results.data[0]);
             this.setState({
                 pictures: results.data[0].photos[0],
                 title: results.data[0].Title
@@ -38,7 +36,6 @@ class MainJumbotron extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div id='home'>
                 <br/>
@@ -52,7 +49,7 @@ class MainJumbotron extends React.Component {
                             //marginTop: '-10px',
                             //marginBottom: '0px',
                             //height: '100%',
-                            //minWidth: '100%',
+                            minWidth: '100%',
                             minHeight:'500px',
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat',

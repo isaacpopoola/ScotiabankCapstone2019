@@ -3,10 +3,10 @@ import {
     MainNavbar,
     MainJumbotron,
     About,
-    Recruiting,
     Team,
     Blogs,
-    Opportunities
+    Opportunities,
+    Footer
 } from './sub_components/index.js'
 
 import axios from 'axios';
@@ -19,7 +19,7 @@ export default class LandingPage extends Component {
         this.state = {
             rec_team: [],
             blogs: [],
-            programs: []
+            programs: [],
         }
     }
 
@@ -27,7 +27,6 @@ export default class LandingPage extends Component {
         this.fetch_recruiters();
         this.fetch_blogposts();
         this.fetch_programs();
-
     }
 
     fetch_recruiters = async (event) => {
@@ -51,6 +50,7 @@ export default class LandingPage extends Component {
         });
     }
 
+
     render() {
         //console.log(this.state);
         return (
@@ -65,6 +65,7 @@ export default class LandingPage extends Component {
                     <Team recruiters={this.state.rec_team} />
                     {/* <Recruiting /> */}
                     <Blogs blogs={this.state.blogs} />
+                    <Footer />
                 </div>
             </div>
         );

@@ -5,35 +5,59 @@ import {
     Row,
     Col
 } from 'react-bootstrap';
+import { Markdown } from 'react-showdown';
+import axios from 'axios';
 
-class About extends React.Component {
+export default class About extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            about: {},
+            fst_image: {},
+            snd_image: {}
+        }
+    }
+
+    componentWillMount() {
+        this.fetch_about();
+    }
+
+    fetch_about = async () => {
+        axios.get("http://192.168.56.101:1337/abouts").then((resp) => {
+            this.setState({ about: resp.data[0], fst_image: resp.data[0].image1, snd_image: resp.data[0].image2 })
+        });
+    }
 
     render() {
         return (
-            <div id='about'>
+            <div id='about'
+            // style={{ marginLeft: '10rem', marginRight: '10rem' }}
+            >
                 <Container fluid>
                     <Row>
-                        <Col>
-                            <h2>Who Are We</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda iusto alias similique aspernatur dolorum mollitia odio. Labore odio facilis dicta deserunt accusantium sequi, possimus officia sed eius incidunt sint.</p>
+                        <Col className='d-flex justify-content-center align-content-center flex-wrap'>
+                            <Container>
+                                <Markdown markup={this.state.about.paragraph1} />
+                            </Container>
+
                         </Col>
-                        <hr />
-                        <Col>
-                            <Image />
+                        <Col className='d-flex justify-content-center align-content-center flex-wrap'>
+                            <Image className='mr-auto' src={`http://192.168.56.101:1337${this.state.fst_image.url}`} style={{ maxWidth: '540px', maxHeight: '383.75px', minWidth: '300', minHeight: '213.19' }} />
                         </Col>
                     </Row>
                 </Container>
+                <hr />
                 <Container fluid>
                     <Row>
-                        <Col>
-                            <Image />
+                        <Col className='d-flex justify-content-center align-content-center flex-wrap'>
+                            <Image className='ml-auto' src={`http://192.168.56.101:1337${this.state.snd_image.url}`} style={{ maxWidth: '540px', maxHeight: '383.75px', minWidth: '300', minHeight: '213.19' }} />
                         </Col>
-                        <Col>
-                            <h2>What Can We Offer You</h2>
-                            <div>
-                                <Image />
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur, similique non eveniet, quos in provident mollitia illo ex aut omnis cum cupiditate harum, nulla officiis alias earum ipsam veniam.</p>
-                            </div>
+                        <Col className='d-flex justify-content-center align-content-center flex-wrap' >
+                            <Container>
+                                <Markdown markup={this.state.about.paragraph2} />
+                            </Container>
                         </Col>
                     </Row>
                 </Container>
@@ -47,4 +71,3 @@ class About extends React.Component {
 
 }
 
-export default About;
