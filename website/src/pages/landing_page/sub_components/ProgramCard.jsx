@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     Card,
     Badge,
-    Button
+    Button,
 } from 'react-bootstrap';
 
 export default class ProgramCard extends Component {
@@ -11,12 +11,12 @@ export default class ProgramCard extends Component {
     render() {
        
         return (
-            <div id='program' style={{ padding: '1rem' }}>
+             <div id='program' style={{ padding: '1rem' }}>
                 <Card
                     //className = 'p-3'
                     style={{
                         width: '20rem',
-                        borderRadius: '5px'
+                        borderRadius: '5px',
                     }}
                 >
                     <Card.Body>
@@ -31,7 +31,7 @@ export default class ProgramCard extends Component {
                         <Button variant='danger' href={this.props.url} target='_blank' style={{ fontSize: '0.8rem' }}>Learn More</Button>
                     </Card.Body>
                 </Card>
-            </div>
+             </div>
         )
     }
 }

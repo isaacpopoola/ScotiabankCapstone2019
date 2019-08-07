@@ -3,8 +3,6 @@ import {
     Jumbotron,
 } from 'react-bootstrap';
 import axios from 'axios';
-import $ from 'jquery';
-
 
 class MainJumbotron extends React.Component {
 

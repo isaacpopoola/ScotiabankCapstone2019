@@ -35,7 +35,7 @@ export default class About extends React.Component {
             <div id='about'
             // style={{ marginLeft: '10rem', marginRight: '10rem' }}
             >
-                <Container fluid>
+                <Container>
                     <Row>
                         <Col className='d-flex justify-content-center align-content-center flex-wrap'>
                             <Container>
@@ -44,15 +44,15 @@ export default class About extends React.Component {
 
                         </Col>
                         <Col className='d-flex justify-content-center align-content-center flex-wrap'>
-                            <Image className='mr-auto' src={`http://192.168.56.101:1337${this.state.fst_image.url}`} style={{ maxWidth: '540px', maxHeight: '383.75px', minWidth: '300', minHeight: '213.19' }} />
+                            <Image className='mr-auto' src={`http://192.168.56.101:1337${this.state.fst_image.url}`} style={{ maxWidth: '540px', maxHeight: '383.75px', minWidth: '300', minHeight: '213.19', borderRadius: '5px' }} />
                         </Col>
                     </Row>
                 </Container>
                 <hr />
-                <Container fluid>
+                <Container>
                     <Row>
                         <Col className='d-flex justify-content-center align-content-center flex-wrap'>
-                            <Image className='ml-auto' src={`http://192.168.56.101:1337${this.state.snd_image.url}`} style={{ maxWidth: '540px', maxHeight: '383.75px', minWidth: '300', minHeight: '213.19' }} />
+                            <Image className='ml-auto' src={`http://192.168.56.101:1337${this.state.snd_image.url}`} style={{ maxWidth: '540px', maxHeight: '383.75px', minWidth: '300', minHeight: '213.19', borderRadius: '5px'}} />
                         </Col>
                         <Col className='d-flex justify-content-center align-content-center flex-wrap' >
                             <Container>
@@ -61,10 +61,6 @@ export default class About extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                {/* <Container> */}
-
-                {/* </Container> */}
-
             </div>
         );
     }

@@ -7,9 +7,6 @@ import {
     Button,
     Modal,
 } from 'react-bootstrap';
-
-import $ from 'jquery';
-
 class RecruiterCard extends React.Component {
 
     constructor(props) {

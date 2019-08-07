@@ -1,16 +1,3 @@
-// import React from 'react';
-// import './App.css';
-// //import 'bootstrap/dist/css/bootstrap.min.css';
-// import {
-//   MainNavbar,
-//   MainJumbotron,
-//   About,
-//   Recruiting,
-//   Team,
-//   Blogs
-// } from './components/componentIndex.jsx'
-// import axios from 'axios';
-
 import React from 'react'
 import { Router } from "react-router";
 import Routes from './pages/Routes.jsx';
@@ -19,6 +6,7 @@ import './App.css';
 
 const history = createBrowserHistory()
 
+//responsible for page routing
 export default class App extends React.Component {
   render() {
     return (

@@ -7,7 +7,6 @@ import {
     Navbar,
     Nav
 } from 'react-bootstrap';
-import { ScrollspyNav } from 'react-scrollspy-nav';
 
 class MainNavbar extends React.Component {
 

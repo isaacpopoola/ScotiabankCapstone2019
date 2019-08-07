@@ -4,7 +4,7 @@ import {
     Container,
 } from 'react-bootstrap'
 import { RecruiterCard } from './index.js';
-import axios from 'axios';
+
 
 export default class Team extends React.Component {
 

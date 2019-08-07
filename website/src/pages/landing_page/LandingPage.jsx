@@ -11,11 +11,13 @@ import {
 
 import axios from 'axios';
 
+//Main page of the website
 export default class LandingPage extends Component {
 
     constructor(props) {
         super(props);
 
+        //keeps record of data fetched from API
         this.state = {
             rec_team: [],
             blogs: [],
@@ -23,12 +25,14 @@ export default class LandingPage extends Component {
         }
     }
 
+    //fetches data from API once the component is mounted
     componentDidMount() {
         this.fetch_recruiters();
         this.fetch_blogposts();
         this.fetch_programs();
     }
 
+    //
     fetch_recruiters = async (event) => {
         //event.preventDefault();
 

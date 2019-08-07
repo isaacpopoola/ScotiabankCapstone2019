@@ -24,6 +24,9 @@ export default class Blogs extends React.Component {
         this.state.categories.set(1, "All");
         this.state.categories.set(2, "About Scotia");
         this.state.categories.set(3, "Advice");
+        this.state.categories.set(4, "Technology");
+        this.state.categories.set(5, "Finance");
+
 
     }
 
@@ -63,9 +66,9 @@ export default class Blogs extends React.Component {
 
         return (
             <div id='blogs' style={{ marginLeft: '10rem', marginRight: '10rem' }}>
-                <hr/>
+                <hr />
                 <h2 className='d-flex justify-content-center text-center flex-wrap'>Blogs</h2>
-                <hr/>
+                <hr />
                 <Container className='d-flex justify-content-center flex-wrap'>
                     <Nav variant='pills' defaultActiveKey='1' >
                         <Nav.Item >
@@ -83,12 +86,22 @@ export default class Blogs extends React.Component {
                                 Advice
                             </Nav.Link>
                         </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey='4' id='Technology' onSelect={this.set_pill}>
+                                Technology
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey='5' id='Finance' onSelect={this.set_pill}>
+                            Finance
+                            </Nav.Link>
+                        </Nav.Item>
                     </Nav>
                 </Container>
                 <CardColumns className='d-flex justify-content-center flex-wrap'>
-                    {this.props.blogs.filter(this.myfilter).map(data => 
-                            <BlogCard {...data} />
-                        )}
+                    {this.props.blogs.filter(this.myfilter).map(data =>
+                        <BlogCard {...data} />
+                    )}
                 </CardColumns>
             </div>
         )
