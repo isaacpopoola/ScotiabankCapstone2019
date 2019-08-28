@@ -1,5 +1,11 @@
 # ScotiabankCapstone2019
 
+## Install Nodejs And Strapi
+
+1. Install [Nodejs](https://nodejs.org/en/) on your computer
+2. Once node installed, open up Command Prompt on Windows or Terminal on Mac/Linux, and type "npm install strapi@beta -g"
+3. Install [Mongodb](https://docs.mongodb.com/manual/administration/install-community/)
+
 ## Start CMS
 1. Open a Terminal
 2. type "cd cms"
@@ -8,7 +14,6 @@
 Default local port is 1337.
 
 username: admin
-
 pass: admin123
 
 This will run the Strapi CMS in dev mode
