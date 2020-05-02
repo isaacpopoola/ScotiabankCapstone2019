@@ -1,47 +1,18 @@
-import React from 'react';
+import React from 'react'
+import { Router } from "react-router";
+import Routes from './pages/Routes.jsx';
+import { createBrowserHistory } from "history";
 import './App.css';
-//import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  MainNavbar,
-  MainJumbotron,
-  About,
-  Recruiting,
-  Team,
-} from './components/componentIndex.jsx'
-import axios from 'axios';
 
-class App extends React.Component {
+const history = createBrowserHistory()
 
-  state = {
-      rec_team: [],
-      blogs: [],
-  }
-
-  fetch_recruiters = async (event) => {
-  	//event.preventDefault();
-  
-    const resp = await axios.get(`http://192.168.56.101:1337/recruiters`);
-    //console.log(resp.data);
-  }
-  
-
- fetch_blogposts = async () => {
-    const response = await fetch('http://192.168.56.101:1337/blogpost');
-    const data = await response.json();
-    return data;
-  }
-
+//responsible for page routing
+export default class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <MainNavbar />
-        <MainJumbotron />
-        <About />
-        <Team />
-        <Recruiting />
-      </div>
+      <Router history={history}>
+        <Routes />
+      </Router>
     );
   }
 }
-
-export default App;

@@ -9,7 +9,7 @@
 ## Start CMS
 1. Open a Terminal
 2. type "cd cms"
-3. type "strapi run"
+3. type "strapi develop"
 
 Default local port is 1337.
 

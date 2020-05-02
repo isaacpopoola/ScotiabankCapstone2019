@@ -1,11 +1,12 @@
-/* .jumbotron {
-    background-image: url(./assets/images/img2.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.modal-content {
+    border-radius:'15px'!important;
 }
 
-#front {
-    height: 500px;
-} */
+.embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+    position: inherit;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #DC3545;
+}

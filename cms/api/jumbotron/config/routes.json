@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/jumbotrons",
+      "handler": "Jumbotron.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jumbotrons/count",
+      "handler": "Jumbotron.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jumbotrons/:id",
+      "handler": "Jumbotron.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/jumbotrons",
+      "handler": "Jumbotron.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/jumbotrons/:id",
+      "handler": "Jumbotron.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/jumbotrons/:id",
+      "handler": "Jumbotron.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -33,6 +33,14 @@
     },
     "JobTitle": {
       "type": "text"
+    },
+    "Type": {
+      "enum": [
+        "Director",
+        "Recruiter",
+        "Program Manager"
+      ],
+      "type": "enumeration"
     }
   }
 }

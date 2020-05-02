@@ -1,0 +1,37 @@
+{
+  "connection": "default",
+  "collectionName": "abouts",
+  "info": {
+    "name": "about",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Title1": {
+      "type": "string"
+    },
+    "Title2": {
+      "type": "string"
+    },
+    "paragraph1": {
+      "type": "text"
+    },
+    "paragraph2": {
+      "type": "text"
+    },
+    "image1": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "image2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}
